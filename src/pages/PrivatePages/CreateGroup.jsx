@@ -57,23 +57,23 @@ const CreateGroup = () => {
     };
 
     return (
-        <div className='p-24 bg-blue-100'>
+        <div className='p-24 bg-green-50'>
             <h1 className='text-center mb-14 text-4xl'>Create Group</h1>
 
             <form onSubmit={handleCreateGroup}>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                     <fieldset className="fieldset rounded-box p-4">
-                        <label className="label">Group Name</label>
-                        <input type="text" name='groupname' className="input w-full" placeholder="Enter group name" required />
+                        <label className="label font-bold">Group Name</label>
+                        <input type="text" name='groupname' className="input w-full " placeholder="Enter group name" required />
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4">
-                        <label className="label">Image Url</label>
+                        <label className="label font-bold">Image Url</label>
                         <input type="text" name='imageurl' className="input w-full" placeholder="Enter photo URL" required />
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4">
-                        <label className="label">User Name</label>
+                        <label className="label font-bold">User Name</label>
                         <input
                             type="text"
                             name="name"
@@ -84,33 +84,33 @@ const CreateGroup = () => {
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4">
-                        <label className="label">User Email</label>
+                        <label className="label font-bold">User Email</label>
                         <input
                             type="email"
                             name="email"
-                            className="input w-full"
+                            className="input w-full "
                             value={user?.email || ''}
                             readOnly
                         />
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4">
-                        <label className="label">Max Member</label>
+                        <label className="label font-bold">Max Member</label>
                         <input type="number" name='member' className="input w-full" placeholder="Enter max members" required />
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4">
-                        <label className="label">Start Date</label>
+                        <label className="label font-bold">Start Date</label>
                         <input type="date" name='date' className="input w-full" required />
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4">
-                        <label className="label">Meeting Location</label>
+                        <label className="label font-bold">Meeting Location</label>
                         <input type="text" name='location' className="input w-full" placeholder="Write your location" required />
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4">
-                        <label className="label">Description</label>
+                        <label className="label font-bold">Description</label>
                         <textarea className="textarea w-full" name='description' placeholder="Write a description" required></textarea>
                     </fieldset>
                 </div>
@@ -163,7 +163,7 @@ const CreateGroup = () => {
 
                 {/* Submit */}
                 <div className="flex justify-center">
-                    <button type="submit" className="btn btn-success rounded-xl w-60">
+                    <button type="submit" className="btn btn-primary hover:cursor-pointer p-3 mt-10 rounded-xl w-100">
                         Create Group
                     </button>
                 </div>

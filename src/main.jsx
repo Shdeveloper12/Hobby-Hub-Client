@@ -16,6 +16,7 @@ import PrivateRoute from './pages/PrivatePages/PrivateRoutes.jsx';
 import CreateGroup from './pages/PrivatePages/CreateGroup.jsx';
 import MyGroup from './pages/PrivatePages/MyGroup.jsx';
 import AuthProvider from './contexts/AuthProvider.jsx';
+import GroupDetails from './pages/GroupDetails.jsx';
 
 
 const router = createBrowserRouter([
@@ -24,16 +25,23 @@ const router = createBrowserRouter([
     element: <MainLayout></MainLayout>,
     children: [
       {
+       
         path: '/',
+        
         element: <Home></Home>
       },
       {
         path: '/allgroup',
+        loader: () => fetch('http://localhost:3000/allgroups'),
         element: <AllGroup></AllGroup>
       },
       {
         path: '/creategroup',
         element: <PrivateRoute><CreateGroup></CreateGroup></PrivateRoute>
+      },
+      {
+        path: '/groupdetails',
+        element: <GroupDetails></GroupDetails>
       },
       {
         path: '/mygroup',
