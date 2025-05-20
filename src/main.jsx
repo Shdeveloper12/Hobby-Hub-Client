@@ -2,23 +2,66 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+  import { ToastContainer } from 'react-toastify';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router";
+import MainLayout from './MainLayout.jsx';
+import Home from './pages/Home.jsx';
+import Login from './pages/Login.jsx';
+import Register from './pages/Register.jsx';
+import AllGroup from './pages/AllGroup.jsx';
+import PrivateRoute from './pages/PrivatePages/PrivateRoutes.jsx';
+import CreateGroup from './pages/PrivatePages/CreateGroup.jsx';
+import MyGroup from './pages/PrivatePages/MyGroup.jsx';
+import AuthProvider from './contexts/AuthProvider.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello World</div>,
+    element: <MainLayout></MainLayout>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path: '/allgroup',
+        element: <AllGroup></AllGroup>
+      },
+      {
+        path: '/creategroup',
+        element: <PrivateRoute><CreateGroup></CreateGroup></PrivateRoute>
+      },
+      {
+        path: '/mygroup',
+        element: <PrivateRoute><MyGroup></MyGroup></PrivateRoute>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: 'register',
+        element: <Register></Register>
+      },
+
+    ]
   },
 ]);
 
 
 createRoot(document.getElementById('root')).render(
+
+
   <StrictMode>
+    <ToastContainer position="top-center" />
+    <AuthProvider>
     <RouterProvider router={router} />
+
+    </AuthProvider>
 
   </StrictMode>,
 )
