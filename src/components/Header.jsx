@@ -70,7 +70,7 @@ const Header = () => {
             <div className="navbar-end space-x-2">
                 {user ? (
                     <>
-                        <span>{user.email}</span>
+                       
                         <div className="relative w-10 h-10">
                             <img
                                 className="rounded-full w-full h-full"

@@ -1,11 +1,21 @@
 
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useNavigation } from 'react-router';
 import AllGroupCard from '../components/AllGroupCard';
+import Home from './Home';
 
 const AllGroup = () => {
-    const InitialCoffees = useLoaderData();
-    const [allgroups, setGroups] = useState(InitialCoffees);
+    const InitialGroup = useLoaderData();
+    const navigation = useNavigation();
+    const [allgroups, setGroups] = useState(InitialGroup);
+
+    if (navigation.state === 'loading') {
+        return (
+            <div className="flex justify-center items-center h-64">
+                <span className="loading loading-ring loading-xl"></span>
+            </div>
+        );
+    }
     return (
         <div>
 
@@ -21,10 +31,14 @@ const AllGroup = () => {
                         allgroup={allgroup}
 
                     ></AllGroupCard>)
+
+
                 }
 
+
+
             </div>
-           
+
         </div>
     );
 };

@@ -18,7 +18,11 @@ import MyGroup from './pages/PrivatePages/MyGroup.jsx';
 import AuthProvider from './contexts/AuthProvider.jsx';
 import GroupDetails from './pages/GroupDetails.jsx';
 
-
+const loadGroupById = async ({ params }) => {
+  const res = await fetch('http://localhost:3000/allgroups'); // ideally an API like `/groups/${params.id}`
+  const data = await res.json();
+  return data.find(group => group._id === params.id);
+};
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,7 +31,7 @@ const router = createBrowserRouter([
       {
        
         path: '/',
-        
+        loader: () => fetch('http://localhost:3000/allgroups'),
         element: <Home></Home>
       },
       {
@@ -40,7 +44,8 @@ const router = createBrowserRouter([
         element: <PrivateRoute><CreateGroup></CreateGroup></PrivateRoute>
       },
       {
-        path: '/groupdetails',
+        path: '/groupdetails/:id',
+        loader: loadGroupById,
         element: <GroupDetails></GroupDetails>
       },
       {

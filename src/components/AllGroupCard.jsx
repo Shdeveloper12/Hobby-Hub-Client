@@ -1,15 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link,  } from 'react-router';
 
-const AllGroupCard = ({ allgroup, allgroups, setGroups }) => {
-    const {
-        _d, groupname, imageurl,
-        name, email, member, date,
-        location, description,
-        category
+const AllGroupCard = ({ allgroup }) => {
+    
+    const { _id, groupname, imageurl, } = allgroup;
 
-    } = allgroup;
-
+    
 
     return (
         <div className="card bg-base-100  shadow-sm">
@@ -21,9 +17,9 @@ const AllGroupCard = ({ allgroup, allgroups, setGroups }) => {
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title text-lg "><span className='font-bold'>Group Name:</span> {groupname}</h2>
-               
+
                 <div className="card-actions">
-                    <button className="btn btn-primary"><Link to='/groupdetails'>See Details</Link> </button>
+                    <button className="btn btn-primary"><Link to={`/groupdetails/${_id}`}>See Details</Link> </button>
                 </div>
             </div>
         </div>

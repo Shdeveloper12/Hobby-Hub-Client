@@ -1,11 +1,21 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import Swal from 'sweetalert2';
+import { useNavigation } from 'react-router';
 
 const CreateGroup = () => {
     const [category, setCategory] = useState('');
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const { user } = useContext(AuthContext);
+    const navigation = useNavigation();
+
+    if (navigation.state === 'loading') {
+        return (
+            <div className="flex justify-center items-center h-64">
+                <span className="loading loading-ring loading-xl"></span>
+            </div>
+        );
+    }
 
     const handleSelectCategory = (cat) => {
         setCategory(cat);
