@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router'; // fixed import
+import { Link, useNavigate } from 'react-router'; 
 import { AuthContext } from '../contexts/AuthContext';
 import { updateProfile } from 'firebase/auth';
 import toast, { Toaster } from 'react-hot-toast';
 import Swal from 'sweetalert2';
-import { Eye, EyeOff } from 'lucide-react'; // Lucide icons
+import { Eye, EyeOff } from 'lucide-react';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -18,11 +18,11 @@ const Register = () => {
         e.preventDefault();
         const form = e.currentTarget;
         const name = form.name.value;
-        const photo = form.photo.value;
+        const photoURL = form.photo.value || "https://i.ibb.co/yP0zF9N/user.png"; 
         const email = form.email.value;
         const password = form.password.value;
 
-        // ✅ Password validation
+        
         if (!/[A-Z]/.test(password)) {
             toast.error('Password must contain at least one UPPERCASE letter');
             return;
@@ -39,12 +39,13 @@ const Register = () => {
         setLoading(true);
 
         try {
-            const result = await createUser(email, password);
+            const result = await createUser(email, password); 
             const user = result.user;
 
+            
             await updateProfile(user, {
                 displayName: name,
-                photoURL: photo,
+                photoURL,
             });
 
             Swal.fire({

@@ -7,7 +7,8 @@ import {
     onAuthStateChanged,
     signInWithEmailAndPassword,
     signInWithPopup,
-    signOut
+    signOut,
+    updateProfile
 } from 'firebase/auth';
 
 const authProvider = new GoogleAuthProvider();
@@ -16,9 +17,25 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [Loading, setLoading] = useState(true);
 
-    const createUser = (email, password) => {
+    // ✅ Create user with displayName and photoURL
+    const createUser = (email, password, name, photoURL) => {
         setLoading(true);
-        return createUserWithEmailAndPassword(auth, email, password);
+        return createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const defaultPhoto = photoURL || 'https://img.icons8.com/color/96/000000/user.png';
+                return updateProfile(userCredential.user, {
+                    displayName: name,
+                    photoURL: defaultPhoto
+                }).then(() => {
+                    // Manually update user state after profile update
+                    setUser({
+                        ...userCredential.user,
+                        displayName: name,
+                        photoURL: defaultPhoto
+                    });
+                    return userCredential;
+                });
+            });
     };
 
     const signInUser = (email, password) => {
@@ -38,7 +55,6 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-            console.log('Current user inside useEffect:', currentUser);
             setUser(currentUser);
             setLoading(false);
         });
@@ -49,10 +65,11 @@ const AuthProvider = ({ children }) => {
     const userInfo = {
         user,
         Loading,
-        createUser,
+        createUser,     // Now includes name + photoURL
         signInUser,
         googleSignIn,
-        signOutUser
+        signOutUser,
+        setUser
     };
 
     return (

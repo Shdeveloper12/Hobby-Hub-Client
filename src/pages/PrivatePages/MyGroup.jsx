@@ -19,7 +19,7 @@ const MyGroup = () => {
                         <th>1</th>
                         <td>Cy Ganderton</td>
                         <td>Quality Control Specialist</td>
-                        <td>Blue</td>
+                        <td><button className='btn btn-soft btn-success'>Ubdate</button> <button className='btn btn-soft btn-error'>Delete</button></td>
                     </tr>
                     {/* row 2 */}
                     <tr>

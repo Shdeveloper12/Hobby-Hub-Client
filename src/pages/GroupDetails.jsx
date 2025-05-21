@@ -1,6 +1,6 @@
 import { div } from 'framer-motion/client';
 import React, { useState } from 'react';
-import { useLoaderData, useNavigation } from 'react-router';
+import { Link, useLoaderData, useNavigation } from 'react-router';
 
 const GroupDetails = () => {
     const group = useLoaderData();
@@ -20,6 +20,7 @@ const GroupDetails = () => {
     }
 
     const {
+        _id,
         groupname,
         imageurl,
         name,
@@ -51,12 +52,13 @@ const GroupDetails = () => {
 
                 <div className="mt-6 text-center">
                     {joined ? (
-                        <p className="text-green-600 font-semibold">You’ve joined this group!</p>
+                        <p className="text-green-600 font-semibold ml-4">You’ve joined this group!</p>
                     ) : (
                         <button onClick={handleJoinGroup} className="btn btn-success">
                             Join Group
                         </button>
                     )}
+                    <button className="btn btn-success ml-5"><Link to={`/ubdategroupdetails/${_id}`}>Ubdate Group Details</Link></button>
                 </div>
             </div>
         </div>
