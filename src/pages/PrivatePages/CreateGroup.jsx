@@ -139,6 +139,7 @@ const CreateGroup = () => {
                         <ul className="absolute top-full mt-2 bg-white z-10 w-52 p-2 shadow-lg rounded-box">
                             {[
                                 "Drawing & Painting",
+                                "Web Developing",
                                 "Photography",
                                 "Video Gaming",
                                 "Fishing",
