@@ -62,7 +62,7 @@ const Banner = () => {
 
     return (
         <div
-            className="relative w-full h-[600px] overflow-hidden hover:cursor-pointer"
+            className="relative w-full h-[600px] primary overflow-hidden hover:cursor-pointer"
             onMouseEnter={stopAutoSlide}
             onMouseLeave={startAutoSlide}
         >
@@ -71,9 +71,9 @@ const Banner = () => {
                     key={current}
                     className="absolute w-full h-full"
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 2 }}
+                    animate={{ opacity: 5 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: .4 }}
+                    transition={{ duration: .3 }}
                 >
                     <img
                         src={slides[current].image}

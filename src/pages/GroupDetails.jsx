@@ -1,3 +1,4 @@
+import { PilcrowSquare } from 'lucide-react';
 import React, { useState } from 'react';
 import { Link, useLoaderData, useNavigation } from 'react-router';
 
@@ -44,30 +45,30 @@ const GroupDetails = () => {
                     className="w-full h-72 object-cover rounded-lg mb-6"
                 />
                 <div>
-                    <h1 className="text-3xl font-bold mb-4">{groupname}</h1>
-                    <p><strong>Organizer:</strong> {name}</p>
-                    <p><strong>Email:</strong> {email}</p>
-                    <p><strong>Members:</strong> {member}</p>
-                    <p><strong>Date:</strong> {date}</p>
-                    <p><strong>Location:</strong> {location}</p>
-                    <p><strong>Category:</strong> {category}</p>
-                    <p className="mt-4 font-"><strong>Description:</strong> {description}</p>
+                    <h1 className="text-3xl font-bold mb-4 primary">{groupname}</h1>
+                    <p className='secondary'><strong>Organizer:</strong> {name}</p>
+                    <p className='secondary'><strong>Email:</strong> {email}</p>
+                    <p className='secondary'><strong>Members:</strong> {member}</p>
+                    <p className='secondary'><strong>Date:</strong> {date}</p>
+                    <p className='secondary'><strong>Location:</strong> {location}</p>
+                    <p className='secondary'><strong>Category:</strong> {category}</p>
+                    <p className="mt-4 secodary"><strong>Description:</strong> {description}</p>
                 </div>
 
                 <div className="mt-6 text-center">
                     {joined ? (
-                        <p className="text-green-600 font-semibold">You’ve joined this group!</p>
+                        <p className="text-green-600 font-semibold primary">You’ve joined this group!</p>
                     ) : (
                         <button
                             onClick={handleJoinGroup}
-                            className="btn btn-success"
+                            className="btn btn-success primary"
                         >
                             Join Group
                         </button>
                     )}
 
                     <Link to={`/updategroupdetails/${_id}`}>
-                        <button className="btn btn-outline btn-info ml-4">
+                        <button className="btn btn-outline btn-info ml-4 primary">
                             Update Group Details
                         </button>
                     </Link>

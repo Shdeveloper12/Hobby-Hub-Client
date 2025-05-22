@@ -16,6 +16,7 @@
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.511.0",
     "react": "^19.1.0",
+    "react-countup": "^6.5.3",
     "react-dom": "^19.1.0",
     "react-hot-toast": "^2.5.2",
     "react-router": "^7.6.0",

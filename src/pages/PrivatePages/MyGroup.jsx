@@ -66,15 +66,15 @@ const MyGroups = () => {
     }
 
     return (
-        <div className="overflow-x-auto mt-10 px-4">
-            <h2 className="text-2xl font-bold mb-4 text-center">My Groups</h2>
+        <div className="overflow-x-auto mt-10 px-4 ">
+            <h2 className="text-2xl font-bold mb-4 text-center primary">My Groups</h2>
 
             {groups.length > 0 ? (
                 <>
                     <div className='  lg:hidden overflow-x-auto'>
                         <table className="table table-zebra w-full bg-base-100 text-sm">
                             <thead>
-                                <tr>
+                                <tr className='primary'>
                                     <th>#</th>
                                     <th>Group Name</th>
                                     <th>Member</th>
@@ -113,7 +113,7 @@ const MyGroups = () => {
                     <div className='hidden lg:block gap-5'>
                         <table className="table table-zebra w-full bg-base-100 text-sm">
                             <thead>
-                                <tr>
+                                <tr className='primary'>
                                     <th>#</th>
                                     <th>Group Name</th>
                                     <th>Member</th>
@@ -129,9 +129,9 @@ const MyGroups = () => {
                                         <td>{index + 1}</td>
                                         <td className='font-bold font-opensans'>{group.groupname}</td>
                                         <td>{group.member}</td>
-                                        <td className='font-secondary'>{group.date}</td>
-                                        <td className='font-roboto'>{group.category}</td>
-                                        <td className='primary'>{group.description}</td>
+                                        <td className='secondary'>{group.date}</td>
+                                        <td className='secondary'>{group.category}</td>
+                                        <td className='secondary'>{group.description}</td>
                                         <td>
                                             <button
                                                 className="btn w-25 btn-sm btn-outline btn-success mr-2"

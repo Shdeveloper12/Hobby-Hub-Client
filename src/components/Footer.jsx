@@ -2,17 +2,17 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer sm:footer-horizontal bg-green-400  p-10">
+        <footer className="footer sm:footer-horizontal bg-green-400  p-10 ">
             <aside>
                 
                 <p>
-                    <h1 className='text-3xl font-bold text-blue-700'>HobbyHub</h1>
+                    <h1 className='text-3xl font-bold text-blue-700 third'>HobbyHub</h1>
                     <br />
-                    Hobby is important for every person.
+                    <p className='secondary'>Hobby is important for every person.</p>
                 </p>
             </aside>
             <nav>
-                <h6 className="footer-title">Social</h6>
+                <h6 className="footer-title primary">Social</h6>
                 <div className="grid grid-flow-col gap-4">
                     <a>
                         <svg
