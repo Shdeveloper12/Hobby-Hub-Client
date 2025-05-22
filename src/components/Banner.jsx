@@ -71,9 +71,9 @@ const Banner = () => {
                     key={current}
                     className="absolute w-full h-full"
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    animate={{ opacity: 2 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: .5 }}
+                    transition={{ duration: .4 }}
                 >
                     <img
                         src={slides[current].image}

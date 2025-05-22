@@ -6,7 +6,7 @@ const Footer = () => {
             <aside>
                 
                 <p>
-                    <h1 className='text-3xl font-bold'>HobbyHub</h1>
+                    <h1 className='text-3xl font-bold text-blue-700'>HobbyHub</h1>
                     <br />
                     Hobby is important for every person.
                 </p>
