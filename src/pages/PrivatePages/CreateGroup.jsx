@@ -69,42 +69,42 @@ const CreateGroup = () => {
             <form onSubmit={handleCreateGroup}>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                     <fieldset className="fieldset rounded-box p-4">
-                        <label className="label font-bold text-orange-400">Group Name</label>
+                        <label className="label font-bold text-orange-400 secondary">Group Name</label>
                         <input type="text" name='groupname' className="input w-full" placeholder="Enter group name" required />
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4">
-                        <label className="label font-bold text-orange-400">Image URL</label>
+                        <label className="label font-bold text-orange-400 secondary ">Image URL</label>
                         <input type="text" name='imageurl' className="input w-full" placeholder="Enter image URL" required />
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4">
-                        <label className="label font-bold text-orange-400">Your Name</label>
+                        <label className="label font-bold text-orange-400 secondary">Your Name</label>
                         <p className="input w-full ">{user?.displayName}</p>
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4">
-                        <label className="label font-bold text-orange-400">Your Email</label>
+                        <label className="label font-bold text-orange-400 secondary">Your Email</label>
                         <p className="input w-full">{user?.email}</p>
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4">
-                        <label className="label font-bold text-orange-400">Max Members</label>
+                        <label className="label font-bold text-orange-400 secondary">Max Members</label>
                         <input type="number" name='member' className="input w-full" placeholder="Enter max members" required />
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4">
-                        <label className="label font-bold text-orange-400">Start Date</label>
+                        <label className="label secondary font-bold text-orange-400">Start Date</label>
                         <input type="date" name='date' className="input w-full" required />
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4">
-                        <label className="label font-bold text-orange-400">Meeting Location</label>
+                        <label className="label secondary font-bold text-orange-400">Meeting Location</label>
                         <input type="text" name='location' className="input w-full" placeholder="Enter meeting location" required />
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4 ">
-                        <label className="label font-bold text-orange-400">Description</label>
+                        <label className="label secondary font-bold text-orange-400">Description</label>
                         <textarea className="textarea w-full" name='description' placeholder="Write a description" required></textarea>
                     </fieldset>
                 </div>
@@ -112,7 +112,7 @@ const CreateGroup = () => {
                 {/* Hobby Category Selection */}
                 <div className="flex flex-col items-center mt-6">
                     {category && (
-                        <p className="text-lg font-semibold text-orange-400 mb-2">
+                        <p className="text-lg secondary font-semibold text-orange-400 mb-2">
                             Selected Hobby: <span className="text-blue-700">{category}</span>
                         </p>
                     )}
@@ -127,7 +127,7 @@ const CreateGroup = () => {
                         </button>
 
                         {dropdownOpen && (
-                            <ul className="absolute top-full mt-2 bg-orange-400 text-black w-52 p-2 shadow-lg rounded-box z-10">
+                            <ul className="absolute secondary top-full mt-2 bg-orange-400 text-black w-52 p-2 shadow-lg rounded-box z-10">
                                 {[
                                     "Drawing & Painting",
                                     "Web Developing",
@@ -156,7 +156,7 @@ const CreateGroup = () => {
 
                 {/* Submit Button */}
                 <div className="flex justify-center">
-                    <button type="submit" className="btn btn-outline btn-success mt-10 rounded-xl w-50">
+                    <button type="submit" className="btn btn-outline primary btn-success mt-10 rounded-xl w-50">
                         Create Group
                     </button>
                 </div>

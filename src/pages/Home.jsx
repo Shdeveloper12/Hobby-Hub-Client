@@ -22,7 +22,7 @@ const Home = () => {
         <h1 className='text-2xl font-bold text-center mb-6 primary'>Featured Group</h1>
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 '>
-          {allgroups.slice(0, 3).map(group => (
+          {allgroups.slice(0, 6).map(group => (
             <AllGroupCard key={group._id} allgroup={group} />
           ))}
         </div>
