@@ -51,7 +51,7 @@ const GroupDetails = () => {
                     <p><strong>Date:</strong> {date}</p>
                     <p><strong>Location:</strong> {location}</p>
                     <p><strong>Category:</strong> {category}</p>
-                    <p className="mt-4"><strong>Description:</strong> {description}</p>
+                    <p className="mt-4 font-"><strong>Description:</strong> {description}</p>
                 </div>
 
                 <div className="mt-6 text-center">

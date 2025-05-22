@@ -22,7 +22,7 @@ import Error from './pages/Error.jsx';
 import UpdateGroup from './pages/UpdateGroup.jsx';
 
 const loadGroupById = async ({ params }) => {
-  const res = await fetch('http://localhost:3000/allgroups'); // ideally an API like `/groups/${params.id}`
+  const res = await fetch('http://localhost:3000/allgroups'); 
   const data = await res.json();
   return data.find(group => group._id === params.id);
 };

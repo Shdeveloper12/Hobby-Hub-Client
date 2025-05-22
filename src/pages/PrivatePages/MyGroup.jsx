@@ -24,7 +24,7 @@ const MyGroups = () => {
             });
     }, [user]);
 
-    const handleDelete = (groupId) => {
+    const handleDelete = (email) => {
         Swal.fire({
             title: 'Are you sure?',
             text: "This action cannot be undone!",
@@ -35,13 +35,13 @@ const MyGroups = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then(result => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/allgroups/${groupId}`, {
+                fetch(`http://localhost:3000/allgroups/${email}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
                         if (data.deletedCount > 0) {
-                            setGroups(prev => prev.filter(g => g._id !== groupId));
+                            setGroups(prev => prev.filter(g => g._id !== email));
                             Swal.fire('Deleted!', 'Your group has been deleted.', 'success');
                         } else {
                             Swal.fire('Error!', 'Group not found or already deleted.', 'error');
@@ -55,12 +55,13 @@ const MyGroups = () => {
         });
     };
 
-    const handleUpdate = (groupId) => {
-        navigate(`/updategroupdetails/${groupId}`);
+    const handleUpdate = (email) => {
+        navigate(`/updategroupdetails/${email}`);
     };
 
     if (loading) {
-        return <div className="text-center mt-10">Loading...</div>;
+
+        return <div className="loading loading-ring loading-xl"></div>;
     }
 
     return (
@@ -68,39 +69,94 @@ const MyGroups = () => {
             <h2 className="text-2xl font-bold mb-4 text-center">My Groups</h2>
 
             {groups.length > 0 ? (
-                <table className="table table-zebra w-full bg-base-100">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Group Name</th>
-                            <th>Description</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {groups.map((group, index) => (
-                            <tr key={group._id}>
-                                <td>{index + 1}</td>
-                                <td>{group.groupname}</td>
-                                <td>{group.description}</td>
-                                <td>
-                                    <button
-                                        className="btn btn-sm btn-outline btn-success mr-2"
-                                        onClick={() => handleUpdate(group._id)}
-                                    >
-                                        Update
-                                    </button>
-                                    <button
-                                        className="btn btn-sm btn-outline btn-error"
-                                        onClick={() => handleDelete(group._id)}
-                                    >
-                                        Delete
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                <>
+                    <div className='hidden md:block overflow-x-auto'>
+                        <table className="table table-zebra w-full bg-base-100 text-sm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Group Name</th>
+                                    <th>Member</th>
+                                    <th>Created Date</th>
+                                    <th>Category</th>
+                                    <th>Description</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {groups.map((group, index) => (
+                                    <tr key={group._id}>
+                                        <td>{index + 1}</td>
+                                        <td className='font-bold font-primary'>{group.groupname}</td>
+                                        <td>{group.member}</td>
+                                        <td className='font-secondary'>{group.date}</td>
+                                        <td className='font-primary'>{group.category}</td>
+                                        <td className='font-primary'>{group.description}</td>
+                                        <td>
+                                            <button
+                                                className="btn w-25 btn-sm btn-outline btn-success mr-2"
+                                                onClick={() => handleUpdate(group._id)}
+                                            >
+                                                Update
+                                            </button>
+                                            <button
+                                                className="btn w-25 mt-2 btn-sm btn-outline btn-error"
+                                                onClick={() => handleDelete(group._id)}
+                                            >
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div className='flex flex-col md:hidden gap-5'>
+                        <table className="table table-zebra w-full bg-base-100 text-sm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Group Name</th>
+                                    <th>Member</th>
+                                    <th>Created Date</th>
+                                    <th>Category</th>
+                                    <th>Description</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {groups.map((group, index) => (
+                                    <tr key={group._id}>
+                                        <td>{index + 1}</td>
+                                        <td className='font-bold font-primary'>{group.groupname}</td>
+                                        <td>{group.member}</td>
+                                        <td className='font-secondary'>{group.date}</td>
+                                        <td className='font-primary'>{group.category}</td>
+                                        <td className='font-primary'>{group.description}</td>
+                                        <td>
+                                            <button
+                                                className="btn w-25 btn-sm btn-outline btn-success mr-2"
+                                                onClick={() => handleUpdate(group._id)}
+                                            >
+                                                Update
+                                            </button>
+                                            <button
+                                                className="btn w-25 mt-2 btn-sm btn-outline btn-error"
+                                                onClick={() => handleDelete(group._id)}
+                                            >
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </>
+
+
             ) : (
                 <p className="text-center mt-6 text-gray-500">No groups created yet.</p>
             )}

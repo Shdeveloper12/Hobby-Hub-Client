@@ -26,7 +26,7 @@ const Header = () => {
 
     const links = (
         <>
-            <li><NavLink to="/" className={getNavLinkClass}>Home</NavLink></li>
+            <li><NavLink to="/" className={getNavLinkClass }>Home</NavLink></li>
             <li><NavLink to="/allgroup" className={getNavLinkClass}>All Groups</NavLink></li>
             {user && (
                 <>
@@ -38,7 +38,7 @@ const Header = () => {
     );
 
     return (
-        <div className="navbar bg-green-400 shadow-sm">
+        <div className="navbar bg-green-400 shadow-sm ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -48,15 +48,15 @@ const Header = () => {
                                 d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 w-52 p-2 shadow bg-base-100 rounded-box z-10">
+                    <ul tabIndex={0} className="menu font-primary menu-sm dropdown-content mt-3 w-52 p-2 shadow bg-base-100 rounded-box z-10">
                         {links}
                     </ul>
                 </div>
-                <Link to="/" className="font-bold text-2xl text-blue-700">HobbyHub</Link>
+                <Link to="/" className="font-bold text-2xl text-blue-700 font-primary">HobbyHub</Link>
             </div>
 
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal space-x-2 text-xl">
+                <ul className="menu font-primary menu-horizontal space-x-2 text-xl">
                     {links}
                 </ul>
             </div>
