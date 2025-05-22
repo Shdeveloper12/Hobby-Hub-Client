@@ -7,8 +7,8 @@ import CountUp from 'react-countup';
 const Home = () => {
   const allgroups = useLoaderData();
   
-   const totalGroup = 10;
-   const totalUser = 500;
+   const totalGroup = 9;
+   const totalUser = 503;
   const activeUser = 50;
  
   

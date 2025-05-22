@@ -91,7 +91,7 @@ const UpdateGroup = () => {
 
                     <fieldset className="fieldset p-4">
                         <label className="label font-bold text-orange-400">Image URL</label>
-                        <input defaultValue={imageurl} type="text" name="imageurl" className="input w-full" required />
+                        <input  type="text" name="imageurl" className="input w-full" required />
                     </fieldset>
 
                     <fieldset className="fieldset p-4">
@@ -111,7 +111,7 @@ const UpdateGroup = () => {
 
                     <fieldset className="fieldset p-4">
                         <label className="label font-bold text-orange-400">Start Date</label>
-                        <input defaultValue={date} type="date" name="date" className="input w-full" required />
+                        <input  type="date" name="date" className="input w-full" required />
                     </fieldset>
 
                     <fieldset className="fieldset p-4">
@@ -121,7 +121,7 @@ const UpdateGroup = () => {
 
                     <fieldset className="fieldset p-4">
                         <label className="label font-bold text-orange-400">Description</label>
-                        <textarea defaultValue={description} name="description" className="textarea w-full" required></textarea>
+                        <textarea  name="description" className="textarea w-full" required></textarea>
                     </fieldset>
                 </div>
 
