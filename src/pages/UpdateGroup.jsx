@@ -85,42 +85,42 @@ const UpdateGroup = () => {
             <form onSubmit={handleUpdateGroup}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <fieldset className="fieldset p-4">
-                        <label className="label font-bold text-orange-400">Group Name</label>
+                        <label className="label font-bold text-orange-400 secondary">Group Name</label>
                         <input defaultValue={groupname} type="text" name="groupname" className="input w-full" required />
                     </fieldset>
 
                     <fieldset className="fieldset p-4">
-                        <label className="label font-bold text-orange-400">Image URL</label>
+                        <label className="label font-bold text-orange-400 secondary">Image URL</label>
                         <input  type="text" name="imageurl" className="input w-full" required />
                     </fieldset>
 
                     <fieldset className="fieldset p-4">
-                        <label className="label font-bold text-orange-400">User Name</label>
+                        <label className="label font-bold text-orange-400 secondary">User Name</label>
                         <input type="text" name="name" className="input w-full" value={user?.displayName || ''} readOnly />
                     </fieldset>
 
                     <fieldset className="fieldset p-4">
-                        <label className="label font-bold text-orange-400">User Email</label>
+                        <label className="label font-bold text-orange-400 secondary">User Email</label>
                         <input type="email" name="email" className="input w-full" value={user?.email || ''} readOnly />
                     </fieldset>
 
                     <fieldset className="fieldset p-4">
-                        <label className="label font-bold text-orange-400">Max Members</label>
+                        <label className="label font-bold text-orange-400 secondary">Max Members</label>
                         <input defaultValue={member} type="number" name="member" className="input w-full" required />
                     </fieldset>
 
                     <fieldset className="fieldset p-4">
-                        <label className="label font-bold text-orange-400">Start Date</label>
+                        <label className="label font-bold text-orange-400 secondary">Start Date</label>
                         <input  type="date" name="date" className="input w-full" required />
                     </fieldset>
 
                     <fieldset className="fieldset p-4">
-                        <label className="label font-bold text-orange-400">Meeting Location</label>
+                        <label className="label font-bold text-orange-400 secondary">Meeting Location</label>
                         <input defaultValue={location} type="text" name="location" className="input w-full" required />
                     </fieldset>
 
                     <fieldset className="fieldset p-4">
-                        <label className="label font-bold text-orange-400">Description</label>
+                        <label className="label font-bold text-orange-400 secondary">Description</label>
                         <textarea  name="description" className="textarea w-full" required></textarea>
                     </fieldset>
                 </div>
@@ -128,7 +128,7 @@ const UpdateGroup = () => {
                 <input type="hidden" name="category" value={selectedCategory} />
 
                 {selectedCategory && (
-                    <p className="text-center text-lg font-semibold mt-4 text-orange-400">
+                    <p className="text-center primary text-lg font-semibold mt-4 text-orange-400">
                         Selected Hobby: <span className="text-blue-700">{selectedCategory}</span>
                     </p>
                 )}
@@ -143,7 +143,7 @@ const UpdateGroup = () => {
                     </button>
 
                     {dropdownOpen && (
-                        <ul className="absolute text-black top-full mt-2 bg-orange-400 z-10 w-52 p-2 shadow-lg rounded-box">
+                        <ul className="absolute secondary text-black top-full mt-2 bg-orange-400 z-10 w-52 p-2 shadow-lg rounded-box">
                             {[
                                 "Drawing & Painting",
                                 "Web Developing",
@@ -170,7 +170,7 @@ const UpdateGroup = () => {
                 </div>
 
                 <div className="flex justify-center">
-                    <button type="submit" className="btn btn-outline btn-success mt-10 rounded-xl w-50">
+                    <button type="submit" className="btn btn-outline btn-success primary mt-10 rounded-xl w-50">
                         Update Now
                     </button>
                 </div>
