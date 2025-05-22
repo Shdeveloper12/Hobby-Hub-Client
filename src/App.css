@@ -3,10 +3,26 @@
 @plugin "daisyui";
 
 
+/* Google Font Style */
+.primary{
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+.secondary {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
 
-/* google font  */
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;700&display=swap');
+
 
 
 

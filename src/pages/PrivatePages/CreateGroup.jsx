@@ -80,12 +80,12 @@ const CreateGroup = () => {
 
                     <fieldset className="fieldset rounded-box p-4">
                         <label className="label font-bold text-orange-400">Your Name</label>
-                        <p className="input w-full bg-gray-100">{user?.displayName}</p>
+                        <p className="input w-full ">{user?.displayName}</p>
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4">
                         <label className="label font-bold text-orange-400">Your Email</label>
-                        <p className="input w-full bg-gray-100">{user?.email}</p>
+                        <p className="input w-full">{user?.email}</p>
                     </fieldset>
 
                     <fieldset className="fieldset rounded-box p-4">

@@ -3,6 +3,7 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router';
 
+
 const MyGroups = () => {
     const { user } = useContext(AuthContext);
     const [groups, setGroups] = useState([]);
@@ -70,7 +71,7 @@ const MyGroups = () => {
 
             {groups.length > 0 ? (
                 <>
-                    <div className='hidden md:block overflow-x-auto'>
+                    <div className='  lg:hidden overflow-x-auto'>
                         <table className="table table-zebra w-full bg-base-100 text-sm">
                             <thead>
                                 <tr>
@@ -78,8 +79,6 @@ const MyGroups = () => {
                                     <th>Group Name</th>
                                     <th>Member</th>
                                     <th>Created Date</th>
-                                    <th>Category</th>
-                                    <th>Description</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -90,8 +89,7 @@ const MyGroups = () => {
                                         <td className='font-bold font-primary'>{group.groupname}</td>
                                         <td>{group.member}</td>
                                         <td className='font-secondary'>{group.date}</td>
-                                        <td className='font-primary'>{group.category}</td>
-                                        <td className='font-primary'>{group.description}</td>
+                                        
                                         <td>
                                             <button
                                                 className="btn w-25 btn-sm btn-outline btn-success mr-2"
@@ -112,7 +110,7 @@ const MyGroups = () => {
                         </table>
                     </div>
 
-                    <div className='flex flex-col md:hidden gap-5'>
+                    <div className='hidden lg:block gap-5'>
                         <table className="table table-zebra w-full bg-base-100 text-sm">
                             <thead>
                                 <tr>
@@ -129,11 +127,11 @@ const MyGroups = () => {
                                 {groups.map((group, index) => (
                                     <tr key={group._id}>
                                         <td>{index + 1}</td>
-                                        <td className='font-bold font-primary'>{group.groupname}</td>
+                                        <td className='font-bold font-opensans'>{group.groupname}</td>
                                         <td>{group.member}</td>
                                         <td className='font-secondary'>{group.date}</td>
-                                        <td className='font-primary'>{group.category}</td>
-                                        <td className='font-primary'>{group.description}</td>
+                                        <td className='font-roboto'>{group.category}</td>
+                                        <td className='primary'>{group.description}</td>
                                         <td>
                                             <button
                                                 className="btn w-25 btn-sm btn-outline btn-success mr-2"
