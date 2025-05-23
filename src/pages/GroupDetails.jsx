@@ -57,7 +57,7 @@ const GroupDetails = () => {
 
                 <div className="mt-6 text-center">
                     {joined ? (
-                        <p className="text-green-600 font-semibold primary">You’ve joined this group!</p>
+                        <p className="text-green-600 font-semibold primary ml-4">You’ve joined this group!</p>
                     ) : (
                         <button
                             onClick={handleJoinGroup}
