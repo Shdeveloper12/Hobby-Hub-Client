@@ -13,7 +13,7 @@ const Footer = () => {
 
                         </div>
                         <br />
-                        <p className='secondary text-md'>A hobby is an activity pursued in one's leisure  <br /> time for enjoyment. It's something you do for fun,  <br /> not for money, and typically do fairly regularly. <br /> Hobbies can range from collecting items to <br /> creative pursuits, playing sports, or other amusements</p>
+                        <p className='secondary text-md'>A hobby is an activity pursued in one's leisure time for enjoyment. It's something you do for fun,   not for money, and typically do fairly regularly. Hobbies can range from collecting items to  creative pursuits, playing sports, or other amusements</p>
 
                     </div>
                     <div>
@@ -41,6 +41,11 @@ const Footer = () => {
 
 
 
+            </footer>
+            <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+                <aside>
+                    <p>Copyright © {new Date().getFullYear()} - All right reserved by SH Developer Ltd</p>
+                </aside>
             </footer>
 
         </>

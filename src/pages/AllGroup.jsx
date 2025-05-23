@@ -18,8 +18,9 @@ const AllGroup = () => {
     }
     return (
         <div>
-
+                <div className='flex justify-center mt-8 text-2xl primary font-bold'>Showing All Group</div>
             <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 2  p-5'>
+                
 
                 {
 

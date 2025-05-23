@@ -66,7 +66,7 @@ const MyGroups = () => {
     }
 
     return (
-        <div className="overflow-x-auto mt-10 px-4 ">
+        <div className="overflow-x-auto mt-10 px-4 mb-8">
             <h2 className="text-2xl font-bold mb-4 text-center primary">My Groups</h2>
 
             {groups.length > 0 ? (
@@ -156,7 +156,7 @@ const MyGroups = () => {
 
 
             ) : (
-                <p className="text-center mt-6 text-gray-500">No groups created yet.</p>
+                <p className="text-center mt-6 text-gray-500 ">No groups created yet.</p>
             )}
         </div>
     );

@@ -33,8 +33,8 @@ const CreateGroup = () => {
         const newGroup = {
             ...groupData,
             category,
-            creatorName: user?.displayName || '',
-            creatorEmail: user?.email || '',
+            name: user?.displayName || '',
+            email: user?.email || '',
         };
 
         fetch('http://localhost:3000/allgroups', {
