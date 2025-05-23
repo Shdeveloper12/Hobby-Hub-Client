@@ -57,7 +57,7 @@ const UpdateGroup = () => {
             email: user?.email || '',
         };
 
-        fetch(`http://localhost:3000/allgroups/${_id}`, {
+        fetch(`https://hobbyhub-server-xi.vercel.app/allgroups/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

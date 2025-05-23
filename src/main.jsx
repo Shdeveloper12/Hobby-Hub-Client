@@ -22,7 +22,7 @@ import Error from './pages/Error.jsx';
 import UpdateGroup from './pages/UpdateGroup.jsx';
 
 const loadGroupById = async ({ params }) => {
-  const res = await fetch('http://localhost:3000/allgroups'); 
+  const res = await fetch('https://hobbyhub-server-xi.vercel.app/allgroups'); 
   const data = await res.json();
   return data.find(group => group._id === params.id);
 };
@@ -35,12 +35,12 @@ const router = createBrowserRouter([
       {
 
         path: '/',
-        loader: () => fetch('http://localhost:3000/allgroups'),
+        loader: () => fetch('https://hobbyhub-server-xi.vercel.app/allgroups'),
         element: <Home></Home>
       },
       {
         path: '/allgroup',
-        loader: () => fetch('http://localhost:3000/allgroups'),
+        loader: () => fetch('https://hobbyhub-server-xi.vercel.app/allgroups'),
         element: <AllGroup></AllGroup>
       },
       {
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/updategroupdetails/:id",
-         loader: ({ params }) => fetch(`http://localhost:3000/allgroups/${params.id}`),
+         loader: ({ params }) => fetch(`https://hobbyhub-server-xi.vercel.app/allgroups/${params.id}`),
         element:<UpdateGroup></UpdateGroup>,
        
       },

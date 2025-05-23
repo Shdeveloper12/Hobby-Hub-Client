@@ -37,7 +37,7 @@ const CreateGroup = () => {
             email: user?.email || '',
         };
 
-        fetch('http://localhost:3000/allgroups', {
+        fetch('https://hobbyhub-server-xi.vercel.app/allgroups', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -156,7 +156,7 @@ const CreateGroup = () => {
 
                 {/* Submit Button */}
                 <div className="flex justify-center">
-                    <button type="submit" className="btn btn-outline primary btn-success mt-10 rounded-xl w-50">
+                    <button type="submit" className="btn  btn-outline primary btn-success mt-10 rounded-xl w-50">
                         Create Group
                     </button>
                 </div>
