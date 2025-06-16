@@ -26,6 +26,8 @@ const loadGroupById = async ({ params }) => {
   const data = await res.json();
   return data.find(group => group._id === params.id);
 };
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -60,7 +62,7 @@ const router = createBrowserRouter([
       {
         path: "/updategroupdetails/:id",
          loader: ({ params }) => fetch(`https://hobbyhub-server-xi.vercel.app/allgroups/${params.id}`),
-        element:<UpdateGroup></UpdateGroup>,
+        element:<PrivateRoute><UpdateGroup></UpdateGroup></PrivateRoute>,
        
       },
 

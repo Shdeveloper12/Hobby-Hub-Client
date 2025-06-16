@@ -65,7 +65,7 @@ const AuthProvider = ({ children }) => {
     const userInfo = {
         user,
         Loading,
-        createUser,     // Now includes name + photoURL
+        createUser,    
         signInUser,
         googleSignIn,
         signOutUser,

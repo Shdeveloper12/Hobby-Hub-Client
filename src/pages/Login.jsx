@@ -31,7 +31,7 @@ const Login = () => {
                 text: 'Password must be at least 6 characters long.'
             });
         }
-
+        
         signInUser(email, password)
             .then(() => {
                 setLoading(false);

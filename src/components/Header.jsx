@@ -27,6 +27,7 @@ const Header = () => {
 
     const links = (
         <>
+        
             <li><NavLink to="/" className={getNavLinkClass}>Home</NavLink></li>
             <li><NavLink to="/allgroup" className={getNavLinkClass}>All Groups</NavLink></li>
             {user && (
