@@ -1,3 +1,48 @@
+----------------------------------------------------HOBBY-HUB------------------------------------------------------
+
+
+HobbyHub is a MERN stack social platform where users can create and share hobby groups, connect with like-minded individuals, and explore various interests. Users can post about their hobbies, join groups, and engage in community-driven discussions.
+
+
+# Tech Stack
+
+MongoDB – Database for storing users, groups, and posts
+
+Express.js – Backend server and REST API
+
+React.js – Frontend UI built with components and hooks
+
+Node.js – Server-side runtime environment
+
+
+# Features
+User authentication (Login / Register)
+
+Create, edit, and delete hobby groups
+
+Explore and join different hobby communities
+
+Responsive design for all screen sizes
+
+
+# Run Project Local
+https://hobbyhub-server-xi.vercel.app/allgroups
+https://hobbyhub-server-xi.vercel.app/allgroups/:id
+
+
+# Project Live Link
+https://hobbyhub1.netlify.app
+
+
+
+
+
+
+
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
