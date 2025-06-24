@@ -26,8 +26,8 @@ Responsive design for all screen sizes
 
 
 # Run Project Local
-https://hobbyhub-server-xi.vercel.app/allgroups
-https://hobbyhub-server-xi.vercel.app/allgroups/:id
+1.https://hobbyhub-server-xi.vercel.app/allgroups
+2.https://hobbyhub-server-xi.vercel.app/allgroups/:id
 
 
 # Project Live Link
