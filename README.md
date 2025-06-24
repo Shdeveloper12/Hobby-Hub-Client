@@ -1,4 +1,4 @@
-----------------------------------------------------HOBBY-HUB------------------------------------------------------
+-----------------------------------------------------------HOBBY-HUB------------------------------------------------------
 
 
 HobbyHub is a MERN stack social platform where users can create and share hobby groups, connect with like-minded individuals, and explore various interests. Users can post about their hobbies, join groups, and engage in community-driven discussions.
