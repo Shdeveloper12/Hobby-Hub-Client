@@ -3,7 +3,7 @@
 
 HobbyHub is a MERN stack social platform where users can create and share hobby groups, connect with like-minded individuals, and explore various interests. Users can post about their hobbies, join groups, and engage in community-driven discussions.
 
-
+![](https://github.com/Shdeveloper12/Hobby-Hub-Client/blob/main/hobbyhub.jpg.png)
 # Tech Stack
 
 MongoDB – Database for storing users, groups, and posts
