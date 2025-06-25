@@ -15,7 +15,7 @@ const AllGroupCard = ({ allgroup }) => {
                 <img
                     src={imageurl}
                     alt="Shoes"
-                    className="rounded-xl w-100" />
+                    className="rounded-md w-100" />
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title text-lg "><span className='font-bold primary'>Group Name:</span> {groupname}</h2>

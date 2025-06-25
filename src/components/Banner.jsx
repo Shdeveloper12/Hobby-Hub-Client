@@ -62,7 +62,7 @@ const Banner = () => {
 
     return (
         <div
-            className="relative w-full h-[600px] primary overflow-hidden hover:cursor-pointer"
+            className="relative w-full h-[400px] primary overflow-hidden hover:cursor-pointer"
             onMouseEnter={stopAutoSlide}
             onMouseLeave={startAutoSlide}
         >

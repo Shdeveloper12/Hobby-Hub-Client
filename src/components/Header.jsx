@@ -40,7 +40,7 @@ const Header = () => {
     );
 
     return (
-        <div className="navbar bg-green-400 shadow-sm ">
+        <div className="navbar bg-green-400 shadow-sm sticky top-0 z-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -90,10 +90,10 @@ const Header = () => {
                 {user ? (
                     <>
                         <div className="tooltip tooltip-bottom" data-tip={user?.displayName || "No Name"}>
-                            <div className="w-10 hidden lg:block md:block rounded-full overflow-hidden border border-gray-300">
+                            <div className="hidden lg:block md:block rounded-full overflow-hidden border border-gray-300">
                                 <img
-                                    src={user?.photoURL || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"}
-                                    alt="user avatar"
+                                    src={user?.photoURL}
+                                    alt="user avatar" className="w-10 h-10 object-cover rounded-full"
                                 />
                             </div>
                         </div>
