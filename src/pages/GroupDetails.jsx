@@ -42,7 +42,7 @@ const GroupDetails = () => {
                 <img
                     src={imageurl}
                     alt={groupname}
-                    className="w-full h-72 object-cover rounded-lg mb-6"
+                    className="w-full h-72 object-cover rounded-md mb-6"
                 />
                 <div>
                     <h1 className="text-3xl font-bold mb-4 primary">{groupname}</h1>

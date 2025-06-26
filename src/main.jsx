@@ -20,6 +20,9 @@ import GroupDetails from './pages/GroupDetails.jsx';
 import UbdateGroupDetails from './pages/UpdateGroup.jsx';
 import Error from './pages/Error.jsx';
 import UpdateGroup from './pages/UpdateGroup.jsx';
+import Terms from './pages/Terms.jsx';
+import Privacy from './pages/Privacy.jsx';
+import Cookies from './pages/Cookies.jsx';
 
 const loadGroupById = async ({ params }) => {
   const res = await fetch('https://hobbyhub-server-xi.vercel.app/allgroups'); 
@@ -74,6 +77,18 @@ const router = createBrowserRouter([
         path: 'register',
         element: <Register></Register>
       },
+      {
+        path: '/terms',
+        element: <Terms></Terms>
+      },
+      {
+        path: '/privacy',
+        element: <Privacy></Privacy>
+      },
+      {
+        path: '/cookies',
+        element: <Cookies></Cookies>
+      }
 
     ]
   },

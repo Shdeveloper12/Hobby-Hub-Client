@@ -37,7 +37,7 @@ const CreateGroup = () => {
             email: user?.email || '',
         };
 
-        fetch('https://hobbyhub-server-xi.vercel.app/allgroups', {
+        fetch(`${import.meta.env.VITE_API_URL}/allgroups`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -63,8 +63,8 @@ const CreateGroup = () => {
     };
 
     return (
-        <div className='p-8 md:p-24'>
-            <h1 className='text-center mb-14 text-4xl text-green-700 font-bold'>Create Group</h1>
+        <div className=' mb-8 md:px-20 lg:px-40'>
+            <h1 className='text-center my-12 text-2xl  font-bold'>Create Group</h1>
 
             <form onSubmit={handleCreateGroup}>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
@@ -156,7 +156,7 @@ const CreateGroup = () => {
 
                 {/* Submit Button */}
                 <div className="flex justify-center">
-                    <button type="submit" className="btn  btn-outline primary btn-success mt-10 rounded-xl w-50">
+                    <button type="submit" className="btn btn-primary secondary mt-10">
                         Create Group
                     </button>
                 </div>

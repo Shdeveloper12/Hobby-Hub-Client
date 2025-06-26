@@ -1,5 +1,6 @@
 import React from 'react';
 import img1 from '../../src/assets/images.png';
+import { Link } from 'react-router';
 
 const Footer = () => {
     return (
@@ -21,18 +22,18 @@ const Footer = () => {
                             <h6 className="footer-title primary text-md">Social</h6>
                             <div className="grid grid-flow-col gap-4 mt-8">
 
-                                <span className='text-4xl'><i class="fa-brands fa-square-facebook"></i></span><span className='text-4xl'><i class="fa-brands fa-x-twitter"></i></span><span className='text-4xl'><i class="fa-brands fa-youtube"></i></span><span className='text-4xl'><i class="fa-brands fa-square-instagram"></i></span>
+                                <span className='text-4xl'><a href="https://www.facebook.com" target='_blank'><i  class="fa-brands fa-square-facebook"></i></a></span><span className='text-4xl'><a href="https://twitter.com" target='_blank'><i class="fa-brands fa-x-twitter"></i></a></span><span className='text-4xl'><a href="https://www.youtube.com" target='_blank'><i class="fa-brands fa-youtube"></i></a></span><span className='text-4xl'><a href="https://www.instagram.com" target='_blank'><i class="fa-brands fa-square-instagram"></i></a></span>
                             </div>
 
                         </nav>
                     </div>
                     <nav className=''>
                         <h6 className="footer-title bt-5">Legal</h6>
-                        <a className="link link-hover secondary ">Terms of use</a>
+                        <Link className="link link-hover secondary " to="/terms">Terms of use</Link>
                         <br />
-                        <a className="link link-hover secondary mt-5">Privacy policy</a>
+                        <Link className="link link-hover secondary mt-5" to="/privacy">Privacy policy</Link>
                         <br />
-                        <a className="link link-hover secondary">Cookie policy</a>
+                        <Link className="link link-hover secondary" to="/cookies">Cookie policy</Link>
                     </nav>
                 </div>
 

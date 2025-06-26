@@ -57,7 +57,7 @@ const UpdateGroup = () => {
             email: user?.email || '',
         };
 
-        fetch(`https://hobbyhub-server-xi.vercel.app/allgroups/${_id}`, {
+        fetch(`${import.meta.env.VITE_API_URL}/allgroups/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -79,8 +79,8 @@ const UpdateGroup = () => {
     };
 
     return (
-        <div className="p-24 ">
-            <h1 className="text-center mb-14 text-4xl font-bold text-green-700">Update Group Details</h1>
+        <div className="container mx-auto mb-8">
+            <h1 className="text-center text-2xl my-12 font-bold ">Update Group Details</h1>
 
             <form onSubmit={handleUpdateGroup}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -170,7 +170,7 @@ const UpdateGroup = () => {
                 </div>
 
                 <div className="flex justify-center">
-                    <button type="submit" className="btn btn-outline btn-success primary mt-10 rounded-xl w-50">
+                    <button type="submit" className="btn btn-primary secondary mt-10">
                         Update Now
                     </button>
                 </div>

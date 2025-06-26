@@ -25,7 +25,7 @@ const AuthProvider = ({ children }) => {
                 const defaultPhoto = photoURL;
                 return updateProfile(userCredential.user, {
                     displayName: name,
-                    photoURL: defaultPhoto
+                    photoURL: photoURL
                 }).then(() => {
                     // Manually update user state after profile update
                     setUser({

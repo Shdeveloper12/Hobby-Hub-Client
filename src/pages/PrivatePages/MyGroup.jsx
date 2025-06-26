@@ -13,7 +13,7 @@ const MyGroups = () => {
     useEffect(() => {
         if (!user?.email) return;
 
-        fetch(`https://hobbyhub-server-xi.vercel.app/allgroups?email=${user.email}`)
+        fetch(`${import.meta.env.VITE_API_URL}/allgroups?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setGroups(data);
@@ -36,7 +36,7 @@ const MyGroups = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then(result => {
             if (result.isConfirmed) {
-                fetch(`https://hobbyhub-server-xi.vercel.app/allgroups/${email}`, {
+                fetch(`${import.meta.env.VITE_API_URL}/allgroups/${email}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -66,7 +66,7 @@ const MyGroups = () => {
     }
 
     return (
-        <div className="overflow-x-auto mt-10 px-4 mb-8">
+        <div className="overflow-x-auto my-12 px-4 mb-8">
             <h2 className="text-2xl font-bold mb-4 text-center primary">My Groups</h2>
 
             {groups.length > 0 ? (
