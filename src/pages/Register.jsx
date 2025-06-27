@@ -67,7 +67,7 @@ const Register = () => {
   return (
     <>
       <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="flex md:gap-5 lg:gap-4 flex-col lg:flex-row-reverse">
          <Toaster />
             <Lottie
             style={{ width: "400px", height: "400px" }}

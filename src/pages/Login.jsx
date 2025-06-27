@@ -93,7 +93,7 @@ const Login = () => {
   return (
     <>
     <div className="hero bg-base-200 min-h-screen">
-    <div className="hero-content flex-col lg:flex-row-reverse">
+    <div className=" flex lg:gap-4 md:gap-5 flex-col lg:flex-row-reverse">
         <Lottie 
             style={{ width: "400px", height: "400px" }}
             animationData={loginaAnimation}

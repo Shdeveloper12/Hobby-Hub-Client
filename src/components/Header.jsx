@@ -81,7 +81,7 @@ const Header = () => {
   );
 
   return (
-    <div className="navbar px-6 bg-green-400 shadow-sm sticky top-0 z-50">
+    <div className="navbar  lg:px-6 bg-green-400 shadow-sm sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -102,7 +102,7 @@ const Header = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu primary menu-sm dropdown-content mt-3 ml-[-20px] w-52 p-2 shadow bg-base-100 rounded-box z-10"
+            className="menu primary menu-sm dropdown-content mt-3  w-52 p-2 shadow bg-base-100 rounded-box z-10"
           >
             {links}
           </ul>

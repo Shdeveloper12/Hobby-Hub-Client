@@ -47,7 +47,7 @@ const AllGroup = () => {
         />
 
         <select
-          className="select select-bordered"
+          className="select select-bordered w-1/3 md:w-1/4 lg:w-1/5"
           value={sortDirection}
           onChange={(e) => setSortDirection(e.target.value)}
         >
