@@ -1,9 +1,15 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const Cookies = () => {
   return (
-    <div className="max-w-4xl mx-auto my-12 space-y-4">
-      <h1 className="text-2xl font-bold mb-4">Cookie Policy</h1>
+    <>
+      <Helmet>
+        <title>Cookie Policy - HobbyHub</title>
+        <meta name="description" content="Learn about the cookie policy of HobbyHub" />
+      </Helmet>
+      <div className="max-w-4xl mx-auto my-12 space-y-4">
+        <h1 className="text-2xl font-bold mb-4">Cookie Policy</h1>
       <p>
         HobbyHub uses cookies to enhance user experience, analyze traffic, and
         provide social media features. By continuing to browse our site, you
@@ -45,6 +51,7 @@ const Cookies = () => {
         their own cookies to collect anonymized data.
       </p>
     </div>
+    </>
   );
 };
 

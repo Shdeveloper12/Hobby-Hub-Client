@@ -1,10 +1,15 @@
 import Lottie from "lottie-react";
 import React from "react";
 import faqanimation from "../animation/faq-animation.json";
+import {Helmet} from "react-helmet";
 
 const FaqSection = () => {
   return (
     <>
+      <Helmet>
+        <title>HOME - HobbyHub</title>
+        <meta name="description" content="Frequently Asked Questions about HobbyHub" />
+      </Helmet>
       <div className="text-center font-bold my-12 text-2xl">
         <h1 className="primary">Frequently Asked Questions</h1>
       </div>

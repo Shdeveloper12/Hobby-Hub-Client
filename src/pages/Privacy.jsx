@@ -1,11 +1,17 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const Privacy = () => {
   return (
-    <div className="max-w-4xl mx-auto my-12 space-y-4">
-      <h1 className="text-2xl font-bold mb-4">Privacy Policy</h1>
-      <p>
-        At HobbyHub, we are committed to protecting your privacy. This policy
+    <>
+      <Helmet>
+        <title>Privacy Policy - HobbyHub</title>
+        <meta name="description" content="Learn about the privacy policy of HobbyHub" />
+      </Helmet>
+      <div className="max-w-4xl mx-auto my-12 space-y-4">
+        <h1 className="text-2xl font-bold mb-4">Privacy Policy</h1>
+        <p>
+          At HobbyHub, we are committed to protecting your privacy. This policy
         outlines how we collect, use, and safeguard your personal information.
       </p>
 
@@ -50,6 +56,7 @@ const Privacy = () => {
         any concerns, contact our support team at privacy@hobbyhub.com.
       </p>
     </div>
+    </>
   );
 };
 

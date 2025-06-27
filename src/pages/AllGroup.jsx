@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { useLoaderData, useNavigation } from "react-router";
 import AllGroupCard from "../components/AllGroupCard";
+import { Helmet } from "react-helmet";
 
 const AllGroup = () => {
   const initialGroups = useLoaderData();
@@ -19,7 +20,6 @@ const AllGroup = () => {
         const dateB = new Date(b.date);
         return sortDirection === "newest" ? dateB - dateA : dateA - dateB;
       });
-
   }, [searchTerm, sortDirection, initialGroups]);
 
   if (navigation.state === "loading") {
@@ -31,47 +31,56 @@ const AllGroup = () => {
   }
 
   return (
-    <div className="px-4">
-      <h2 className="text-2xl font-bold text-center primary my-12 mb-4">
-        Showing All Groups
-      </h2>
-
-      {/* Search & Sort */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
-        <input
-          type="text"
-          placeholder="Search by group name..."
-          className="input input-bordered w-full md:w-1/3 lg:w-1/4"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+    <>
+      <Helmet>
+        <title>All Groups - HobbyHub</title>
+        <meta
+          name="description"
+          content="Explore and join various hobby groups on HobbyHub"
         />
+      </Helmet>
+      <div className="px-4">
+        <h2 className="text-2xl font-bold text-center primary my-12 mb-4">
+          Showing All Groups
+        </h2>
 
-        <select
-          className="select select-bordered w-1/3 md:w-1/4 lg:w-1/5"
-          value={sortDirection}
-          onChange={(e) => setSortDirection(e.target.value)}
-        >
-          <option value="newest">Sort by Newest</option>
-          <option value="oldest">Sort by Oldest</option>
-        </select>
-      </div>
+        {/* Search & Sort */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
+          <input
+            type="text"
+            placeholder="Search by group name..."
+            className="input input-bordered w-full md:w-1/3 lg:w-1/4"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
 
-      {/* Display Groups */}
-      {filteredGroups.length === 0 ? (
-        <p className="text-center text-gray-500">No groups found.</p>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-2">
-          {filteredGroups.map((group) => (
-            <AllGroupCard
-              key={group._id}
-              allgroup={group}
-              allgroups={filteredGroups}
-              setGroups={() => {}} // Not needed for display
-            />
-          ))}
+          <select
+            className="select select-bordered w-1/3 md:w-1/4 lg:w-1/5"
+            value={sortDirection}
+            onChange={(e) => setSortDirection(e.target.value)}
+          >
+            <option value="newest">Sort by Newest</option>
+            <option value="oldest">Sort by Oldest</option>
+          </select>
         </div>
-      )}
-    </div>
+
+        {/* Display Groups */}
+        {filteredGroups.length === 0 ? (
+          <p className="text-center text-gray-500">No groups found.</p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-2">
+            {filteredGroups.map((group) => (
+              <AllGroupCard
+                key={group._id}
+                allgroup={group}
+                allgroups={filteredGroups}
+                setGroups={() => {}} // Not needed for display
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 

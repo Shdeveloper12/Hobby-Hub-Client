@@ -1,12 +1,18 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const Terms = () => {
   return (
-    <div className="max-w-4xl mx-auto my-12 space-y-4">
-      <h1 className="text-2xl font-bold mb-4">Terms of Use</h1>
-      <p>
-        Welcome to HobbyHub! By accessing or using our platform, you agree to be
-        bound by these Terms of Use. If you do not agree with any part of the
+    <>
+      <Helmet>
+        <title>Terms of Use - HobbyHub</title>
+        <meta name="description" content="Learn about the terms of use of HobbyHub" />
+      </Helmet>
+      <div className="max-w-4xl mx-auto my-12 space-y-4">
+        <h1 className="text-2xl font-bold mb-4">Terms of Use</h1>
+        <p>
+          Welcome to HobbyHub! By accessing or using our platform, you agree to be
+          bound by these Terms of Use. If you do not agree with any part of the
         terms, you must not use the site.
       </p>
       <h2 className="text-xl font-semibold">1. User Responsibilities</h2>
@@ -43,6 +49,7 @@ const Terms = () => {
         platform after changes are made implies acceptance of the updated terms.
       </p>
     </div>
+    </>
   );
 };
 

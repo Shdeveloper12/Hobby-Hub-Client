@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import PopularHobbyCard from '../components/PopularHobbyCard';
 import ReviewSection from '../components/ReviewSection';
 import FaqSection from '../components/FaqSection';
+import { Helmet } from 'react-helmet';
 
 
 const Home = () => {
@@ -21,6 +22,9 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Home - HobbyHub</title>
+      </Helmet>
       <Banner />
       <div className="p-5">
       <h1 className="text-2xl font-bold text-center my-12 primary">Featured Group</h1>

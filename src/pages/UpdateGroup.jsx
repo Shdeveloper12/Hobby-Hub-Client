@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
 import { useLoaderData, useNavigation } from 'react-router';
 import { AuthContext } from '../contexts/AuthContext';
+import { Helmet } from 'react-helmet';
 
 const UpdateGroup = () => {
     const {
@@ -79,8 +80,13 @@ const UpdateGroup = () => {
     };
 
     return (
-        <div className="container mx-auto mb-8">
-            <h1 className="text-center text-2xl my-12 font-bold ">Update Group Details</h1>
+        <>
+            <Helmet>
+                <title>Update Group - HobbyHub</title>
+                <meta name="description" content="Update your group details on HobbyHub" />
+            </Helmet>
+            <div className="container mx-auto mb-8">
+                <h1 className="text-center text-2xl my-12 font-bold ">Update Group Details</h1>
 
             <form onSubmit={handleUpdateGroup}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -176,6 +182,7 @@ const UpdateGroup = () => {
                 </div>
             </form>
         </div>
+        </>
     );
 };
 

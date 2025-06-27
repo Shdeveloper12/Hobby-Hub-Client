@@ -1,6 +1,7 @@
 import { PilcrowSquare } from 'lucide-react';
 import React, { useState } from 'react';
 import { Link, useLoaderData, useNavigation } from 'react-router';
+import { Helmet } from 'react-helmet';
 
 const GroupDetails = () => {
     const group = useLoaderData();
@@ -37,11 +38,16 @@ const GroupDetails = () => {
     };
 
     return (
-        <div className="p-5">
-            <div className="max-w-4xl mx-auto p-10 border-amber-400 shadow-xl rounded-lg my-5 space-y-2">
-                <img
-                    src={imageurl}
-                    alt={groupname}
+        <>
+            <Helmet>
+                <title>{groupname} - HobbyHub</title>
+                <meta name="description" content={description} />
+            </Helmet>
+            <div className="p-5">
+                <div className="max-w-4xl mx-auto p-10 border-amber-400 shadow-xl rounded-lg my-5 space-y-2">
+                    <img
+                        src={imageurl}
+                        alt={groupname}
                     className="w-full h-72 object-cover rounded-md mb-6"
                 />
                 <div>
@@ -75,6 +81,7 @@ const GroupDetails = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

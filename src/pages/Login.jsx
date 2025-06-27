@@ -6,6 +6,7 @@ import { Eye, EyeOff } from "lucide-react";
 import { div } from "framer-motion/client";
 import Lottie from "lottie-react";
 import loginaAnimation from "../animation/login.json";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { signInUser, googleSignIn } = useContext(AuthContext);
@@ -92,9 +93,12 @@ const Login = () => {
 
   return (
     <>
-    <div className="hero bg-base-200 min-h-screen">
-    <div className=" flex lg:gap-4 md:gap-5 flex-col lg:flex-row-reverse">
-        <Lottie 
+      <Helmet>
+        <title>Login - HobbyHub</title>
+      </Helmet>
+      <div className="hero bg-base-200 min-h-screen">
+        <div className=" flex lg:gap-4 md:gap-5 flex-col lg:flex-row-reverse">
+          <Lottie
             style={{ width: "400px", height: "400px" }}
             animationData={loginaAnimation}
             loop={true}

@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { Eye, EyeOff } from "lucide-react";
 import Lottie from "lottie-react";
 import registerAnimation from "../animation/register.json";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -66,6 +67,9 @@ const Register = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Register - HobbyHub</title>
+      </Helmet>
       <div className="hero bg-base-200 min-h-screen">
         <div className="flex md:gap-5 lg:gap-4 flex-col lg:flex-row-reverse">
          <Toaster />
